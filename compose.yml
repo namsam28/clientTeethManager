@@ -1,0 +1,6 @@
+services:
+  front-service:
+    container_name: docker-test
+    build: .
+    ports:
+      - 80:3000

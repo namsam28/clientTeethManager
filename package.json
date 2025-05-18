@@ -1,0 +1,53 @@
+{
+  "name": "dental-lab",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "env-cmd -f .envs/.env.local next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@react-spring/three": "^9.7.5",
+    "@react-three/drei": "^10.0.6",
+    "@react-three/fiber": "9.1.2",
+    "@react-three/rapier": "^2.1.0",
+    "@use-gesture/react": "^10.3.1",
+    "@use-gesture/vanilla": "^10.3.1",
+    "ag-grid-community": "^33.3.0",
+    "ag-grid-react": "^33.3.0",
+    "env-cmd": "^10.1.0",
+    "leva": "^0.10.0",
+    "next": "15.3.1",
+    "r3f-perf": "^7.2.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.3.0",
+    "three": "0.174.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@svgr/webpack": "^8.1.0",
+    "@tailwindcss/postcss": "^4.1.4",
+    "@types/node": "^20.17.30",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "autoprefixer": "^10.4.21",
+    "eslint": "~8.57.1",
+    "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "^10.1.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "glslify-loader": "^2.0.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.5.3",
+    "raw-loader": "^4.0.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.31.0"
+  }
+}
