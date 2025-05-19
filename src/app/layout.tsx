@@ -6,6 +6,13 @@ import Symbol from "@assets/symbol.svg";
 export const metadata: Metadata = {
   title: "Real Teeth",
   description: "real teeth",
+  icons: {
+    icon: [
+      {rel: "icon", url: "/icons/favicon.ico"},
+      {rel: "icon", sizes: "144x144", url: "/icons/icon-144.png"},
+    ],
+    apple: [{url: "/icons/apple-touch-icon.png"}],
+  },
 };
 
 export default function RootLayout({
