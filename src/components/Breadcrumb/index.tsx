@@ -6,10 +6,18 @@ function Breadcrumb() {
   return (
     <nav>
       <ol className="flex items-center space-x-2 text-sm text-gray-500">
-        {breadcrumbList.map(item => {
+        {breadcrumbList.map((item, index) => {
+          if (index === 0) {
+            return (
+              <li key={`${index}-${item.label}`}>
+                <span className=" text-gray-600 font-weight">'${item.label}'님의 Library</span>
+              </li>
+            );
+          }
+
           return (
-            <li>
-              <span className=" text-gray-600">'홍길동'님의 Library</span>
+            <li key={`${index}-${item.label}`}>
+              <span className=" text-gray-600 font-weight">{item.label}</span>
             </li>
           );
         })}

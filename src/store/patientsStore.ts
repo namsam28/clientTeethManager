@@ -1,23 +1,39 @@
 import {create} from "zustand";
-import {combine} from "zustand/middleware";
+import {PatientItem} from "@schemas/patients";
+import {getInitialsConsonant} from "@utils/utils";
 
-const patientsStore = create(
-  combine(
-    {
-      selectPatient: null,
-      patientsList: [],
-      selectCase: [],
-      caseList: [],
-    },
-    (set, get) => ({
-      // 선택한 고객
-      setSelectPatient: () => {},
-      // 고객 리스트
-      setPatientList: () => {},
-      setSelectCase: () => {},
-      setCaseList: () => {},
+type PatientsStoreState = {
+  patientsList: PatientItem[];
+  setPatientList: (items: PatientItem[]) => void;
+  setFilterByName: (name: string) => void;
+  filteredPatients: PatientItem[];
+};
+const patientsStore = create<PatientsStoreState>((set, get) => ({
+  filteredPatients: [],
+  // selectPatient: null,
+  patientsList: [],
+  // selectCase: [],
+  // caseList: [],
+  // setSearchPatient: () => {},
+  // 선택한 고객
+  // setSelectPatient: () => {},
+  // 고객 리스트
+  setPatientList: items =>
+    set({
+      patientsList: items,
     }),
-  ),
-);
+  setFilterByName: name =>
+    set(state => {
+      const keyword = name.trim();
+      const keywordInitial = getInitialsConsonant(keyword);
+
+      const filtered = state.patientsList.filter(patient => {
+        const patientName = patient.name;
+        return patientName.includes(keyword) || getInitialsConsonant(patientName).includes(keywordInitial);
+      });
+
+      return {filteredPatients: filtered};
+    }),
+}));
 
 export default patientsStore;

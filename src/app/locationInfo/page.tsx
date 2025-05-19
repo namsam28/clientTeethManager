@@ -1,19 +1,9 @@
-"use client";
 // import {useEffect, useState} from "react";
-import {ModuleRegistry, AllCommunityModule} from "ag-grid-community";
-import {AgGridReact} from "ag-grid-react";
-import {filteredDentalOutputConfig} from "@utils/config";
 import Table from "./Table";
 
-ModuleRegistry.registerModules([AllCommunityModule]);
-
 export default async function Home() {
-  const response = await fetch(`/api/dentalLab`);
+  const response = await fetch(`http://localhost:3000/api/dentalLab`);
   const dentalLabs = await response.json();
-  const fields = filteredDentalOutputConfig.map(item => ({
-    field: Object.keys(item)[0],
-    headerName: Object.values(item)[0],
-  }));
 
   return (
     <div className="w-full h-[100vh] bg-black py-20">

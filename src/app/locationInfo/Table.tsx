@@ -1,6 +1,7 @@
 "use client";
+import {ModuleRegistry, AllCommunityModule} from "ag-grid-community";
 import {AgGridReact} from "ag-grid-react";
-import {filteredDentalOutputConfig} from "@utils/config";
+ModuleRegistry.registerModules([AllCommunityModule]);
 function Table(props) {
   const {list} = props;
   const columnDefs = list.map(item => ({
@@ -10,9 +11,7 @@ function Table(props) {
 
   return (
     <div className="h-[500px] mx-30">
-      <Suspense fallback={null}>
-        <AgGridReact rowData={dentalLabs} columnDefs={columnDefs} />
-      </Suspense>
+      <AgGridReact rowData={list} columnDefs={columnDefs} />
     </div>
   );
 }

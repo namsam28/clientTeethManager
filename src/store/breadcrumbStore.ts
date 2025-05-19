@@ -2,7 +2,7 @@ import {create} from "zustand";
 
 interface BreadcrumbItem {
   label: string;
-  href: string;
+  href?: string;
 }
 
 interface BreadcrumbState {
