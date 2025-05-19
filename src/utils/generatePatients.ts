@@ -33,7 +33,7 @@ export function generatePatients(): PatientItem[] {
   const usedNames = new Set<string>();
   const patients: PatientItem[] = [];
 
-  for (let i = 1; i <= 100; i++) {
+  for (let i = 1; i <= 10; i++) {
     const name: string = getRandomName(usedNames);
     const birth: string = getRandomBirthDate();
     patients.push({
@@ -48,4 +48,3 @@ export function generatePatients(): PatientItem[] {
 
 // 실행 및 출력
 // const patientList = generatePatients();
-// console.log(JSON.stringify(patientList, null, 2));

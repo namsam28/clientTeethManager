@@ -2,7 +2,8 @@
 import Table from "./Table";
 
 export default async function Home() {
-  const response = await fetch(`http://localhost:3000/api/dentalLab`);
+  // const response = await fetch(`http://localhost:3000/api/dentalLab`);
+  const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/dentalLab`, {cache: "no-store"});
   const dentalLabs = await response.json();
 
   return (

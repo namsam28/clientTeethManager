@@ -1,10 +1,14 @@
 "use client";
-import {ModuleRegistry, AllCommunityModule} from "ag-grid-community";
+import {ModuleRegistry, AllCommunityModule, type ColDef} from "ag-grid-community";
 import {AgGridReact} from "ag-grid-react";
+import {DentalLabInfo} from "@schemas/dental";
 ModuleRegistry.registerModules([AllCommunityModule]);
-function Table(props) {
+type TableType = {
+  list: DentalLabInfo[];
+};
+function Table(props: TableType) {
   const {list} = props;
-  const columnDefs = list.map(item => ({
+  const columnDefs: ColDef[] = list.map(item => ({
     field: Object.keys(item)[0],
     headerName: Object.values(item)[0],
   }));

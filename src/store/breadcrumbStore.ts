@@ -6,13 +6,13 @@ interface BreadcrumbItem {
 }
 
 interface BreadcrumbState {
-  breadcrumbList: BreadcrumbItem[];
-  setBreadcrumbList: (items: BreadcrumbItem[]) => void;
+  breadcrumb: BreadcrumbItem[];
+  setBreadcrumb: (items: BreadcrumbItem[]) => void;
 }
 
 const breadcrumbStore = create<BreadcrumbState>((set, get) => ({
-  breadcrumbList: [],
-  setBreadcrumbList: items => set({breadcrumbList: items}),
+  breadcrumb: [],
+  setBreadcrumb: items => set({breadcrumb: items}),
 }));
 
 export default breadcrumbStore;
